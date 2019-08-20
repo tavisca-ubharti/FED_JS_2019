@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <script>
+    function opentab(evt,item) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(item).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+    </script>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      .tab {
+    float: left;
+    border: 0.5px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 500px;
+    }
+    .tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 17px;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+.tab button.active {
+  background-color: #ccc;
+}
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 500px;
+}
+    </style>
+  </head>
+  <body>
+    <header>Sample ToDoList</header>
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event,"todolist")" id="defaultOpen">ToDoList</button>
+  <button class="tablinks" onclick="opentab(event,"user")">User</button>
+  <button class="tablinks" onclick="opentab(event,"display")">Display</button>
+  <button class="tablinks" onclick="opentab(event,"logout")">Logout</button>
+</div>
+
+<div id="todolist" class="tabcontent">
+  <h3>TodoList</h3>
+</div>
+
+<div id="user" class="tabcontent">
+  <h3>User</h3>
+</div>
+
+<div id="display" class="tabcontent">
+  <h3>Display</h3>
+</div>
+
+<div id="logout" class="tabcontent">
+  <h3>Logout</h3>
+</div>
+
+
+<footer>End of the webpage</footer>
+  </body>
+</html>
