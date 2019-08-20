@@ -18,7 +18,9 @@
       evt.currentTarget.className += " active";
     }
 
-    document.getElementById("defaultOpen").click();
+    function defaultOpen(){
+      document.getElementById("defaultOpen").click();
+    }
     </script>
     <style>
       *{
@@ -58,17 +60,19 @@
 }
     </style>
   </head>
-  <body>
-    <header>Sample ToDoList</header>
+  <body onload="defaultOpen()">
+    <header style="text-align:center;font-size:30px;">Sample ToDoList</header>
 <div class="tab">
-  <button class="tablinks" onclick="opentab(event,"todolist")" id="defaultOpen">ToDoList</button>
-  <button class="tablinks" onclick="opentab(event,"user")">User</button>
-  <button class="tablinks" onclick="opentab(event,"display")">Display</button>
-  <button class="tablinks" onclick="opentab(event,"logout")">Logout</button>
+  <button class="tablinks" onclick="opentab(event,'todolist')" id="defaultOpen">ToDoList</button>
+  <button class="tablinks" onclick="opentab(event,'user')">User</button>
+  <button class="tablinks" onclick="opentab(event,'display')">Display</button>
+  <button class="tablinks" onclick="opentab(event,'logout')">Logout</button>
 </div>
 
 <div id="todolist" class="tabcontent">
   <h3>TodoList</h3>
+  <br>
+  <input type="text" placeholder="search">
 </div>
 
 <div id="user" class="tabcontent">
@@ -84,6 +88,6 @@
 </div>
 
 
-<footer>End of the webpage</footer>
+<footer style="text-align:center;font-size:30px;">End of the webpage</footer>
   </body>
 </html>
