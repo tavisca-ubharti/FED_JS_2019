@@ -76,10 +76,10 @@ input[type=button]:hover
   cursor: pointer;
   background: green;
 }
-.footer{
-text-align:center;
-font-size:30px;
+#footer{
+font-size:15px;
 bottom:0;
+text-align: center;
 position:fixed;
 background:white;
 
@@ -93,4 +93,10 @@ background:white;
 }
 #todolist{
   overflow-y: scroll;
+}
+td a{
+  cursor: pointer;
+}
+td a:hover{
+  color: green;
 }

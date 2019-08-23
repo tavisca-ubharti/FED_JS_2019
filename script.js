@@ -46,6 +46,18 @@ function showToDo(){
     myTable.appendChild(tableRow);
   }
 }
+function addValue() {
+  let input = document.getElementById("search").value;
+  input=input.trim();
+  if(input!="")
+  {
+      someToDoList.push(input);
+      document.getElementById("todo").innerText = "";
+      someToDoList.sort();
+      showToDo();
+      document.getElementById("search").value ="";
+    }
+}
 function onKeyUp(event)
 {
   let input = document.getElementById("search").value;
@@ -87,6 +99,7 @@ function onKeyUp(event)
 }
 function onEdit() {
   document.getElementById("search").value=this.parentElement.parentElement.firstChild.innerHTML;
+  this.innerHTML=update;
   findAndDelete(this.parentElement.parentElement.firstChild.innerHTML);
   this.parentElement.parentElement.remove();
 }
