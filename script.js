@@ -35,10 +35,10 @@ function showToDo(){
     tableData.appendChild(dataTobeInserted);
     var editAnchor=document.createElement('a');
     editAnchor.innerText="Edit ";
-    editAnchor.onclick = function (){alert(this.innerHtml);onEdit(this)};
+    editAnchor.onclick = onEdit;
     var deleteAnchor=document.createElement('a');
     deleteAnchor.innerText="Delete";
-    deleteAnchor.onclick = function (){onDelete(Event)};
+    deleteAnchor.onclick = onDelete;
     tableAction.appendChild(editAnchor);
     tableAction.appendChild(deleteAnchor);
     tableRow.appendChild(tableData);
@@ -85,9 +85,22 @@ function onKeyUp(event)
     }
 
 }
-function onEdit(value) {
-  alert(value.innerHtml);
+function onEdit() {
+  document.getElementById("search").value=this.parentElement.parentElement.firstChild.innerHTML;
+  findAndDelete(this.parentElement.parentElement.firstChild.innerHTML);
+  this.parentElement.parentElement.remove();
 }
-function onDelete(evt) {
-
+function onDelete() {
+  findAndDelete(this.parentElement.parentElement.firstChild.innerHTML);
+  this.parentElement.parentElement.remove();
+}
+function findAndDelete(value)
+{
+  for (var i = 0; i < someToDoList.length; i++) {
+    if(someToDoList[i].indexOf(value)==0)
+    {
+      someToDoList.splice(i,1);
+      break;
+    }
+  }
 }
