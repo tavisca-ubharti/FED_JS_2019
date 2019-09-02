@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body onload="defaultOpen();showToDo()">
+    <header>Sample ToDoList</header>
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event,'todolist')" id="defaultOp">ToDoList</button>
+  <button class="tablinks" onclick="opentab(event,'user')">User</button>
+  <button class="tablinks" onclick="opentab(event,'display')">Display</button>
+  <button class="tablinks" onclick="opentab(event,'logout')">Logout</button>
+</div>
+
+<div id="todolist" class="tabcontent">
+  <h3>TodoList</h3>
+  <br>
+    <input type="text" placeholder="type to search" id="search" onkeyup="onKeyUp(event)"></input>
+    <input type="button" value="Add" onclick="addValue()">
+    <div id="autopopulate"></div>
+    <br>
+  <br>
+  <table id="todo">
+  </table>
+</div>
+
+<div id="user" class="tabcontent">
+  <h3>User</h3>
+</div>
+
+<div id="display" class="tabcontent">
+  <h3>Display</h3>
+</div>
+
+<div id="logout" class="tabcontent">
+  <h3>Logout</h3>
+</div>
+
+
+<div id="footer">
+  &copy Ujjwal Bharti
+</div>
+  </body>
+  <script type="text/javascript" src="script.js">
+  </script>
+</html>
